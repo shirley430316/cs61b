@@ -44,6 +44,8 @@ public class TestBSTMap {
         assertThat(b.containsKey("waterYouDoingHere")).isFalse();
         b.put("waterYouDoingHere", 0);
         assertThat(b.containsKey("waterYouDoingHere")).isTrue();
+        b.put("waterYoDoingHere", 0);
+        assertThat(b.containsKey("waterYoDoingHere")).isTrue();
     }
 
     // Assumes `put` is implemented properly.
@@ -79,7 +81,8 @@ public class TestBSTMap {
     public void sanityPutTest() {
         BSTMap<String, Integer> b = new BSTMap<>();
         b.put("hi", 1);
-        assertThat(b.containsKey("hi")).isTrue();
+        b.put("hello", 5);
+        assertThat(b.containsKey("hello")).isTrue();
         assertThat(b.get("hi")).isEqualTo(1);
     }
 
@@ -114,4 +117,29 @@ public class TestBSTMap {
         assertThat(b.get("b")).isEqualTo("provolone");
     }
 
+    @Test
+    public void print() {
+        BSTMap<String, String> b = new BSTMap<>();
+        b.put("d", "parmesan");
+        b.put("a", "mozzarella");
+        b.put("c", "swiss");
+        b.put("b", "pepper jack");
+        b.put("e", "gouda");
+
+        assertThat(b.containsKey("d")).isTrue();
+        assertThat(b.containsKey("b")).isTrue();
+    }
+
+    @Test
+    public void GetTest() {
+
+        BSTMap<String, String> b = new BSTMap<>();
+        b.put("d", "parmesan");
+        b.put("a", "mozzarella");
+        b.put("c", "swiss");
+        b.put("b", "pepper jack");
+        b.put("e", "gouda");
+
+        System.out.println(b.get("e"));
+    }
 }
