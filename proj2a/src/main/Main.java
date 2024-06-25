@@ -2,6 +2,7 @@ package main;
 
 import static utils.Utils.*;
 
+import ngrams.NGramMap;
 import org.slf4j.LoggerFactory;
 
 import browser.NgordnetServer;
@@ -21,8 +22,11 @@ public class Main {
 
         */
 
+        String WORD_FILE = "./data/ngrams/top_14377_words.csv";
+        NGramMap map = new NGramMap(WORD_FILE,TOTAL_COUNTS_FILE);
+
         hns.startUp();
-        hns.register("history", new DummyHistoryHandler());
+        hns.register("history", new HistoryHandler(map));
         hns.register("historytext", new DummyHistoryTextHandler());
 
         System.out.println("Finished server startup! Visit http://localhost:4567/ngordnet_2a.html");

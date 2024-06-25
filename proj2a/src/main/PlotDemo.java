@@ -13,8 +13,8 @@ public class PlotDemo {
 
         NGramMap ngm = new NGramMap(TOP_14337_WORDS_FILE, TOTAL_COUNTS_FILE);
         ArrayList<String> words = new ArrayList<>();
-        words.add("cat");
-        words.add("dog");
+        words.add("sine");
+        words.add("equation");
 
         ArrayList<TimeSeries> lts = new ArrayList<>();
         for (String word : words) {
@@ -27,6 +27,7 @@ public class PlotDemo {
 
         // you can also do this to display locally:
         // Plotter.displayChart(chart);
+
 
     }
 }
