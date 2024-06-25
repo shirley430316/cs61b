@@ -25,6 +25,9 @@ public class HistoryHandler extends NgordnetQueryHandler {
     @Override
     public String handle(NgordnetQuery q) {
 
+        lts = new ArrayList<>();
+        labels = new ArrayList<>();
+
         List<String> words = q.words();
         int startYear = q.startYear();
         int endYear = q.endYear();
